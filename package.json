@@ -1,0 +1,31 @@
+{
+  "name": "h5-vite-vue3-template",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "vant": "^3.2.5",
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.12",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "eslint": "^8.0.1",
+    "eslint-config-alloy": "^4.4.0",
+    "eslint-plugin-vue": "^7.19.1",
+    "postcss-px2vp": "^1.1.2",
+    "sass": "^1.43.2",
+    "unplugin-vue-components": "^0.15.6",
+    "vite": "^2.6.4",
+    "vite-plugin-pages": "^0.18.1",
+    "vite-plugin-style-import": "^1.2.1",
+    "vue-eslint-parser": "^7.11.0"
+  }
+}

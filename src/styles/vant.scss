@@ -1,0 +1,225 @@
+// 本文件用于全局覆盖vant组件样式，根据需要修改
+// NOTE: 全部添加了!important 因为page增加scoped后
+// 此文件样式优先级就会变低，无法覆盖vant默认样式
+:root {
+  // Font
+  --van-font-size-xs: 20px !important;
+  --van-font-size-sm: 24px !important;
+  --van-font-size-md: 30px !important;
+  --van-font-size-lg: 32px !important;
+  --van-line-height-xs: 24px !important;
+  --van-line-height-sm: 36px !important;
+  --van-line-height-md: 34px !important;
+  --van-line-height-lg: 28px !important;
+
+  // padding
+  --van-padding-xs: 10px !important;
+  --van-padding-sm: 20px !important;
+  --van-padding-md: 30px !important;
+  // color
+  --van-primary-color: #bc0f00 !important;
+
+  // address-list
+  --van-address-list-item-padding: 30px !important;
+  --van-address-list-item-font-size: 26px !important;
+  --van-address-list-item-line-height: 36px !important;
+  --van-padding-base: 10px !important;
+  --van-address-list-edit-icon-size: 40px !important;
+  // Border
+  --van-border-width-base: 1px !important;
+  --van-border-radius-sm: 2px !important;
+  --van-border-radius-md: 4px !important;
+  --van-border-radius-lg: 8px !important;
+  --van-border-radius-max: 999px !important;
+
+  // tabbar
+  --van-tabbar-height: 104px !important;
+  --van-tabbar-item-icon-size: 45px !important;
+
+  // Cell
+  --van-cell-line-height: 100px !important;
+  --van-cell-icon-size: 32px !important;
+  --van-field-icon-size: 32px !important;
+
+  // Button
+  --van-button-default-height: 80px !important;
+  --van-button-loading-icon-size: 30px !important;
+
+  // toast
+  --van-toast-default-width: 150px !important;
+  --van-toast-default-padding: 20px !important;
+  // 提交订单
+  --van-submit-bar-height: 132px !important;
+  --van-submit-bar-button-width: 300px !important;
+  --van-submit-bar-button-height: 80px !important;
+  --van-submit-bar-price-integer-font-size: 38px !important;
+  --van-submit-bar-price-font-size: 30px !important;
+
+  // action-bar
+  --van-action-bar-height: 132px !important;
+  --van-action-bar-button-height: 80px !important;
+  --van-action-bar-icon-size: 50px !important;
+  --van-action-bar-icon-font-size: 20px !important;
+
+  // badge
+  --van-badge-padding: 0 8px !important;
+
+  // stepper
+  --van-stepper-input-width: 64px !important;
+  --van-stepper-input-height: 38px !important;
+  --van-stepper-button-round-theme-color: #f1f3f5 !important;
+
+  // dialog
+  --van-dialog-width: 440px !important;
+  --van-dialog-button-height: 80px !important;
+
+  // tabs
+  --van-tabs-line-height: 78px !important;
+
+  // tree-select
+  // --van-tree-select-item-active-color: #e72722 !important;
+  --van-sidebar-line-height: 95px !important;
+  --van-sidebar-font-size: 28px !important;
+  --van-sidebar-background-color: #f2f2f2 !important;
+  --van-sidebar-text-color: #666 !important;
+  --van-sidebar-selected-text-color: #e72722 !important;
+  --van-sidebar-width: 175px !important;
+
+  // countdown
+  --van-count-down-font-size: 22px !important;
+
+  // picker
+  --van-picker-toolbar-height: 110px !important;
+
+  // search
+  --van-search-background-color: #fff !important;
+}
+
+.van-picker__toolbar {
+  // padding-top: 20px !important;
+  // box-sizing: content-box !important;
+}
+
+.van-field__clear {
+  font-size: 32px !important;
+}
+
+.van-tab {
+  flex: 1 0 auto !important;
+}
+
+.van-stepper--round,
+.van-stepper__plus {
+  color: #333 !important;
+}
+
+.van-stepper--round,
+.van-stepper__minus {
+  color: #999 !important;
+}
+
+.van-stepper--round .van-stepper__minus--disabled {
+  opacity: 0.8 !important;
+}
+
+.van-tabs__wrap--scrollable {
+  margin-top: 20px !important;
+}
+
+.van-tabs__wrap--scrollable .van-tab {
+  font-size: 32px !important;
+  padding: 0 26px !important;
+}
+
+.van-tabs__wrap--scrollable .van-tab--active {
+  font-size: 38px !important;
+}
+
+.van-tabs__wrap--scrollable .van-tabs__line {
+  bottom: 24px !important;
+  height: 6px !important;
+  border-radius: 3px !important;
+}
+
+.van-address-item__tag {
+  line-height: 32px !important !important;
+}
+
+.van-address-item {
+  padding: 20px 30px !important;
+}
+
+.van-address-list__bottom {
+  background: transparent !important;
+  bottom: 60px !important;
+}
+
+.van-address-list__add {
+  height: 72px !important;
+}
+
+.van-stepper {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.van-step--vertical {
+  padding: 10px !important;
+
+  .van-step__circle-container {
+    top: 40px !important;
+  }
+}
+
+.van-tree-select__nav {
+  flex: none !important;
+  background-color: #f2f2f2 !important;
+}
+
+.van-tree-select__nav,
+.van-tree-select__content {
+  padding-bottom: 104px !important;
+}
+
+.van-tree-select__nav-item {
+  text-align: center !important;
+}
+
+.van-action-bar-button {
+  height: var(--van-action-bar-button-height) !important;
+
+  &--first {
+    margin-left: 5px;
+    border-top-left-radius: var(--van-border-radius-max) !important;
+    border-bottom-left-radius: var(--van-border-radius-max) !important;
+  }
+
+  &--last {
+    margin-right: 5px;
+    border-top-right-radius: var(--van-border-radius-max) !important;
+    border-bottom-right-radius: var(--van-border-radius-max) !important;
+  }
+
+  &--warning {
+    background: var(--van-action-bar-button-warning-color) !important;
+    border-color: var(--van-action-bar-button-warning-color) !important;
+  }
+
+  &--danger {
+    background: var(--van-action-bar-button-danger-color) !important;
+    border-color: var(--van-action-bar-button-danger-color) !important;
+  }
+}
+
+// tabbar
+.van-tabbar-item__icon .van-badge__wrapper {
+  font-size: 45px !important;
+}
+// refresh
+.van-pull-refresh {
+  background-color: #f1f3f5 !important;
+}
+
+.van-search .van-cell {
+  line-height: 60px !important;
+}

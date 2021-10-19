@@ -1,0 +1,16 @@
+{
+  "strict": true,
+  "moduleResolution": "node",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*",
+      ],
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

@@ -11,7 +11,7 @@
 ├── package.json             # package.json
 ├── public                   # 静态资源目录（不会被处理）
 │   ├── favicon.ico          # 图标
-│   └── fixIosTitle.html     # 用于载入ifame以设置ios网页title
+│   └── fixIosTitle.html     # 用于载入iframe以设置ios网页title
 ├── src                      # 主要源代码目录
 │   ├── App.vue              # 主要app组件
 │   ├── api                  # api服务目录
@@ -34,8 +34,8 @@
 │   └── utils                # 工具
 │       ├── auth.js          # 权限处理
 │       ├── filters.js       # 渲染用的全局方法
-│       ├── index.js         # 通用工具方法
-│       └── storage.js       # 存储相关方法
+│       ├── index.js         # 通用的工具方法
+│       └── storage.js       # 与存储相关的方法
 ├── vite.config.js           # vite配置
 
 ```
@@ -51,3 +51,26 @@
 - vant：优秀的移动端 UI 框架，支持 Vue3
 - vite-plugin-style-import：按需引入 vant 的样式文件
 - postcss-px2vp：用于将设计稿的 px 转换为 vw 单位
+
+## IDE 相关
+
+推荐的 VSCODE 插件：
+
+- Volar：Vite 官方推荐的插件，包含语法提示、自动补全等姑娘
+- Prettier：美化代码
+- Eslint：代码质量检查
+
+推荐 VSCODE `setting.json` 按如下配置：
+
+```json
+{
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```

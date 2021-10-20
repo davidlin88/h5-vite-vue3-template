@@ -5,17 +5,19 @@ import path from 'path'
 import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from 'unplugin-vue-components/resolvers'
 import Pages from 'vite-plugin-pages'
+import px2vp from 'postcss-px2vp'
 
 // https://vitejs.dev/config/
 export default ({ command }) => {
   return defineConfig({
-    base: command === 'serve' ? '/' : 'https://img.cdn.dwhub.com.cn/mall/dist/',
+    // 用于cdn静态部署，
+    // base: command === 'serve' ? '/' : 'https://cdn.example.com/dist/',
     server: {
       proxy: {
         '/proxy_api': {
-          // target: 'http://192.168.2.18:9098/okpay/api',
+          target: 'http://example.com:8080/api',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/proxy_api/, ''),
+          rewrite: path => path.replace(/^\/proxy_api/, ''),
         },
       },
     },
@@ -27,20 +29,23 @@ export default ({ command }) => {
     plugins: [
       vue(),
       Pages({
+        // 可自定义路由组件是否懒加载
         importMode(path) {
-          return path.includes('search') ? 'sync' : 'async'
+          return path.includes('immediate') ? 'sync' : 'async'
         },
         pagesDir: './src/pages',
       }),
       Components({
+        // 按需载入UI插件的组件
         resolvers: [VantResolver()],
       }),
+      // 按需载入UI插件的样式
       styleImport({
         libs: [
           {
             libraryName: 'vant',
             esModule: true,
-            resolveStyle: (name) => {
+            resolveStyle: name => {
               return `vant/es/${name}/style`
             },
           },
@@ -50,9 +55,14 @@ export default ({ command }) => {
     css: {
       postcss: {
         plugins: [
-          require('postcss-px2vp')({
+          px2vp({
+            viewportWidth(rule) {
+              const file = rule.source?.input.file
+              // 根据文件名动态配置viewport width
+              if (file?.includes('vant')) return 375
+              return 750
+            },
             unitToConvert: 'px',
-            viewportWidth: 750,
             unitPrecision: 3,
             propList: ['*'],
             viewportUnit: 'vw',

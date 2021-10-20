@@ -9,7 +9,7 @@ import '@/styles/index.scss'
 const app = createApp(App)
 
 app.config.globalProperties.$filters = {}
-Object.keys(filters).forEach((item) => {
+Object.keys(filters).forEach(item => {
   app.config.globalProperties.$filters[item] = filters[item]
 })
 

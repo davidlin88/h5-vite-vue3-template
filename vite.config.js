@@ -57,9 +57,9 @@ export default ({ command }) => {
         plugins: [
           px2vp({
             viewportWidth(rule) {
-              const file = rule.source?.input.file
+              const file = rule.source && rule.source?.input.file
               // 根据文件名动态配置viewport width
-              if (file?.includes('vant')) return 375
+              if (file && file?.includes('vant')) return 375
               return 750
             },
             unitToConvert: 'px',
@@ -72,7 +72,7 @@ export default ({ command }) => {
             mediaQuery: false,
             replace: true,
             exclude: [],
-            landscape: true,
+            landscape: false,
             landscapeUnit: 'vw',
             landscapeWidth: 750,
           }),
